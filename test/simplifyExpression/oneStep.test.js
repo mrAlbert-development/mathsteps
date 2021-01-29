@@ -95,3 +95,8 @@ describe('simplifyDoubleUnaryMinus step actually happens', function () {
     assert.equal(steps[0].changeType, ChangeTypes.RESOLVE_DOUBLE_MINUS);
   });
 });
+
+describe('skip multiply by 1 step', function() {
+  testOneStep('12x - 11x', 'x');
+  testOneStep('11x - 12x', '-x');
+});
